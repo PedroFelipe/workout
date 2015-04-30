@@ -1,0 +1,65 @@
+<header>
+  <h1><i class="ion-ios-bolt"></i> Workout Log</h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="wrapper">
+        <div class="insert">
+          <form class="form-inline" ng-submit="addActivity()" name="form">
+            <div class="form-group">
+              <label class="sr-only" for="timespent">Time spent in minutes</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="timespent" name="timespent" placeholder="Time spent" ng-model="activity.timespent" required>
+                <div class="input-group-addon">minutes</div>
+              </div><!--/.input-group -->
+            </div><!--/.form-group -->
+            <div class="form-group">
+              <label class="sr-only" for="activity">Activity</label>
+              <select class="form-control" id="activity" name="activity" ng-model="activity.name">
+                <option selected>Running</option>
+                <option>Swimming</option>
+                <option>Biking</option>
+                <option>Jogging</option>
+                <option>Dancing</option>
+              </select>
+            </div><!--/.form-group -->
+            <div class="form-group">
+              <label class="sr-only" for="date">Date</label>
+              <input type="text" class="form-control" id="date" name="date" ui-mask="99/99/9999" model-view-value="true" ng-model="activity.date" required>
+            </div><!--/.form-group -->
+            <button type="submit" class="btn btn-default" ng-disabled="form.$invalid">Add</button>
+          </form><!--/.form-inline -->
+        </div><!--/.insert -->
+
+        <div class="results">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Time spent</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="activity in activities">
+                <td>{{activity.timespent | time }}</td>
+                <td>{{activity.name}}</td>
+                <td>{{activity.date}}</td>
+                <td><a href="" class="remove" ng-click="remove(activity)"><i class="ion-ios-minus"></i></a></td>
+              </tr>
+            </tbody>
+          </table><!--/.table -->
+        </div><!--/.results -->
+      </div><!--/.wrapper -->
+
+      <div class="achievements">
+        <p ng-if="activities.length > 0">You've made a total of <b> {{ totalTimeSpent() }}</b> of exercise <span class="emoji">💪</span></p>
+        <p ng-if="activities.length == 0">Dude, you need to exercise <span class="emoji">😨</span></p>
+      </div><!--/.achievements -->
+    </div><!--/.col-xs-12 -->
+  </div><!--/.row -->
+</div><!--/.container -->
