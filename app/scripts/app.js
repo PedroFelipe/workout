@@ -4,7 +4,8 @@ angular.module('workout', [
   'ngRoute',
   'ngAnimate',
   'ngTouch',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.mask'
 ])
 
 .config(function ($routeProvider) {

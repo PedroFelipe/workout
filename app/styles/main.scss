@@ -3,3 +3,173 @@
 @import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 // endbower
 
+body {
+	padding: 50px 0;
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f6f8;
+}
+
+/* Links */
+a,
+button {
+  outline: 0 !important;
+  transition: all .15s ease;
+
+  &:hover,
+  &:focus {
+    outline: 0 !important;
+  }
+}
+
+/* Reset */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+b {
+	font-weight: 600;
+}
+
+/* Header */
+header {
+	margin: 0 auto;
+	margin-bottom: 50px;
+	text-align: center;
+
+	i {
+		font-size: 32px;
+		margin-right: 2px;
+	}
+
+	h1 {
+		display: inline-block;
+		padding: 0 7px 10px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		color: darken(#bfc3cd, 5);
+		text-transform: uppercase;
+		border-bottom: 1px solid #d6dae1;
+	}
+}
+
+/* Wrapper */
+.wrapper {
+	width: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid #e0e3e8;
+	border-radius: 4px;
+}
+
+/* Insert an item */
+.insert {
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #f6f7f9;
+	border-bottom: 1px solid darken(#eaecef, 3);
+
+	form {
+		display: table;
+		margin: 0 auto;
+
+		.form-group + .form-group,
+		.form-group + .btn {
+			margin-left: 6px;
+		}
+
+		.form-control,
+		.input-group .form-control {
+			width: 110px;
+			height: 32px;
+			padding-left: 10px;
+			padding-right: 10px;
+			font-size: 13px;
+			color: #808999;
+			border-color: #d6dbe1;
+			box-shadow: none;
+
+			&:focus {
+				border-color: darken(#d6dbe1, 7);
+			}
+		}
+
+		.input-group-addon {
+			padding: 7px 10px 6px;
+			font-size: 13px;
+			color: #808999;
+			border-color: #d6dbe1;
+			background-color: lighten(#eee, 5);
+		}
+
+		.btn {
+			height: 32px;
+			font-size: 13px;
+			font-weight: 600;
+			color: #fff;
+			background-color: #75c062;
+			border: transparent;
+
+			&:hover,
+			&:focus {
+				background-color: darken(#75c062, 5);
+			}
+		}
+	}
+}
+
+/* Results */
+.results {
+	table {
+		margin: 0;
+
+		tbody > tr:nth-of-type(odd) {
+			background-color: lighten(#bcc3cd, 20);
+		}
+
+		th,
+		td {
+			font-size: 13px;
+		}
+
+		th {
+			color: darken(#acb2bc, 5);
+		}
+
+		td {
+			color: darken(#acb2bc, 8);
+		}
+	}
+
+	a.remove {
+		position: relative;
+		top: 2px;
+		font-size: 16px;
+		color: #999;
+		line-height: 1;
+
+		&:hover,
+		&:focus {
+			color: #d9534f;
+		}
+	}
+}
+
+/* Achievements */
+.achievements {
+	margin: 30px 0;
+	font-size: 18px;
+	color: #808999;
+	text-align: center;
+
+	.emoji {
+		position: relative;
+		top: 1px;
+		margin-left: 2px;
+	}
+}
