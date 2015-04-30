@@ -15,5 +15,10 @@
   "undef": true,
   "unused": true,
   "strict": true,
-  "jquery": true
+  "jquery": true,
+  "asi": true,
+  "globals": {
+    "angular": false,
+    "module": false
+  }
 }

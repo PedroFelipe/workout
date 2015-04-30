@@ -32,7 +32,7 @@ angular.module('workout')
 	  return $filter('time')(count);
 	};
 
-	$scope.addActivity = function(data) {
+	$scope.addActivity = function() {
 		$scope.activity = [$scope.activity];
 
 		$scope.activities = $scope.activity.concat($scope.activities);

@@ -8,7 +8,7 @@ angular.module('workout')
 
     if(input < 60){
       output = input + 'm';
-    } else if(input % 60 == 0){
+    } else if(input % 60 === 0){
       output = (input - input % 60) / 60 + 'h';
     } else {
        output = ((input - input % 60) / 60 + 'h' + ' ' + input % 60 + 'm');
