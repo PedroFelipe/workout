@@ -3,6 +3,8 @@
 angular.module('workout')
 
 .controller('WorkoutController', function ($scope, $filter) {
+	$scope.activity = {};
+
 	$scope.activities =
 	[
 		{
@@ -33,22 +35,22 @@ angular.module('workout')
 	};
 
 	$scope.addActivity = function() {
-		$scope.convertedDate = $filter('date')($scope.activity.date.getDate(), 'dd/MM/yyyy');
+		$scope.activitytoPush = [{
+			'timespent': $scope.activity.timespent,
+			'name': $scope.activity.name,
+			'date': $scope.activity.date.toString('DD/MM/YYYY')
+		}];
 
-		$scope.activity = [$scope.activity];
-		$scope.activity[0].date = $scope.convertedDate;
-		$scope.activities = $scope.activity.concat($scope.activities);
+		console.log($scope.activitytoPush);
 
-		$scope.convertedDate = '';
-		$scope.activity.date = '';
+		$scope.activities = $scope.activitytoPush.concat($scope.activities);
+
+		$scope.activity.timespent = '';
+		$scope.activity.name = '';
 	};
 
 	$scope.remove = function(activity){
     $scope.activities.splice( $scope.activities.indexOf(activity), 1 );
-  };
-
-  this.onPikadaySelect = function onPikadaySelectFn(pikaday) {
-    alert(pikaday.toString());
   };
 })
 
@@ -57,9 +59,9 @@ angular.module('workout')
     ptbr: {
       previousMonth : 'Mês anterior',
       nextMonth     : 'Próximo mês',
-      months        : ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-      weekdays      : ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"],
-      weekdaysShort : ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"]
+      months        : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      weekdays      : ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+      weekdaysShort : ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
     }
   };
 
