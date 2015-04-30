@@ -5,7 +5,7 @@ angular.module('workout', [
   'ngAnimate',
   'ngTouch',
   'ui.bootstrap',
-  'ui.mask'
+  'pikaday'
 ])
 
 .config(function ($routeProvider) {
